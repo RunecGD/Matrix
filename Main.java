@@ -52,7 +52,7 @@ public class Main {
                         for (int i = 0; i < matrix.getCols(); i++) {
                             System.out.println("Введите "+ (i+1)+ " базис");
                             for (int j = 0; j < matrix.getRows(); j++) {
-                                System.out.println("Введит "+(j+1)+" элемент "+(i+1)+" базиса: ");
+                                System.out.println("Введите "+(j+1)+" элемент "+(i+1)+" базиса: ");
                                 mat.setElement(j, i, new Fraction(scanner.nextInt(), 1));
                             }
                         }
