@@ -80,6 +80,7 @@ class Matrix {
             }
         }
 
+        // Извлечение правой части как обратной матрицы
         Matrix inverse = new Matrix(n, n);
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -104,7 +105,9 @@ class Matrix {
                 columnSum = columnSum.add(getElement(i, j));
             }
 
+            // Проверяем, если сумма столбца равна нулю
             if (columnSum.numerator == 0) {
+                // Если сумма равна нулю, устанавливаем все элементы столбца в 0
                 for (int i = 0; i < getRows(); i++) {
                     transition.setElement(i, j, new Fraction(0, 1));
                 }

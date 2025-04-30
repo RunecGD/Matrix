@@ -48,25 +48,9 @@ public class Main {
                     break;
                 case 4:
                     try {
-                        Matrix mat=new Matrix(matrix.getRows(), matrix.getCols());
-                        for (int i = 0; i < matrix.getCols(); i++) {
-                            System.out.println("Введите "+ (i+1)+ " базис");
-                            for (int j = 0; j < matrix.getRows(); j++) {
-                                System.out.println("Введите "+(j+1)+" элемент "+(i+1)+" базиса: ");
-                                mat.setElement(j, i, new Fraction(scanner.nextInt(), 1));
-                            }
-                        }
+                        Matrix transition = matrix.transitionMatrix();
                         System.out.println("Матрица перехода:");
-                        Matrix transition = mat.inverse();
-                        mat.print();
-                        System.out.println("Вторая матрица перехода: ");
                         transition.print();
-                        Matrix first=transition.multiply(matrix);
-                        System.out.println("Матрица первого умножения: ");
-                        first.print();
-                        System.out.println("Матрица выраженная через новый базис");
-                        Matrix second=first.multiply(mat);
-                        second.print();
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
